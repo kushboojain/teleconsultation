@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<module configVersion="1.2">
+	
+	<!-- Base Module Properties -->
+	<id>${project.parent.artifactId}</id>
+	<name>${project.parent.name}</name>
+	<version>${project.parent.version}</version>
+	<package>org.openmrs.module.teleconsultation</package>
+	<description>
+			${project.parent.description}
+	</description>
+
+	<activator>org.openmrs.module.teleconsultation.TeleconsultationActivator</activator>
+	
+	<!-- <updateURL>https://modules.openmrs.org/modules/download/@MODULE_ID@/update.rdf</updateURL> -->
+	<!-- /Base Module Properties -->
+	
+	<require_version>1.11.6</require_version>
+	
+	<!-- Extensions -->
+	<extension>
+		<point>org.openmrs.admin.list</point>
+		<class>org.openmrs.module.teleconsultation.extension.html.AdminList</class>
+	</extension>
+
+	<aware_of_modules>
+		<aware_of_module>org.openmrs.module.legacyui</aware_of_module>
+	</aware_of_modules>
+
+	<globalProperty>
+		<property>bahmni.appointment.teleConsultation.serverUrlPattern</property>
+		<defaultValue>https://meet.jit.si/{0}</defaultValue>
+		<description>Pattern of the URL for the meeting server. Notice the placeholder {0} for appointment UUID</description>
+	</globalProperty>
+
+	<messages>
+		<lang>en</lang>
+		<file>messages.properties</file>
+	</messages>
+	<messages>
+		<lang>fr</lang>
+		<file>messages_fr.properties</file>
+	</messages>
+	<messages>
+		<lang>es</lang>
+		<file>messages_es.properties</file>
+	</messages>
+</module>
+
