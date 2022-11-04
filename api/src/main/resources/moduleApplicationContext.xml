@@ -27,8 +27,8 @@
 
     <!-- Wraps TeleconsultationService methods in DB transactions and OpenMRS interceptors,
     which set audit info like dateCreated, changedBy, etc.-->
-    <bean id="teleconsultation.TeleconsultationService"
-            class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+    <bean id="teleconsultationServiceImpl" class="org.openmrs.module.teleconsultation.api.impl.TeleconsultationServiceImpl"/>
+    <bean id="teleconsultationService" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
         <property name="transactionManager">
             <ref bean="transactionManager" />
         </property>
@@ -38,6 +38,9 @@
         <property name="transactionAttributeSource">
             <ref bean="transactionAttributeSource" />
         </property>
+        <property name="target">
+            <ref bean="teleconsultationServiceImpl" />
+        </property>
     </bean>
 
     <!-- Adds TeleconsultationService to OpenMRS context so it can be accessed
@@ -46,8 +49,33 @@
         <property name="moduleService">
             <list>
                 <value>org.openmrs.module.teleconsultation.api.TeleconsultationService</value>
-                <ref bean="teleconsultation.TeleconsultationService" />
+                <ref bean="teleconsultationService" />
             </list>
         </property>
     </bean>
+
+<!--    <bean name="teleconsultationService" class="org.openmrs.module.teleconsultation.api.impl.TeleconsultationServiceImpl">-->
+<!--    </bean>-->
+
+<!--    <bean parent="serviceContext">-->
+<!--        <property name="moduleService">-->
+<!--            <list merge="true">-->
+<!--                <value>org.openmrs.module.teleconsultation.api.TeleconsultationService</value>-->
+<!--                <bean class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">-->
+<!--                    <property name="transactionManager">-->
+<!--                        <ref bean="transactionManager" />-->
+<!--                    </property>-->
+<!--                    <property name="target" ref="teleconsultationService">-->
+<!--                    </property>-->
+<!--                    <property name="preInterceptors">-->
+<!--                        <ref bean="serviceInterceptors" />-->
+<!--                    </property>-->
+<!--                    <property name="transactionAttributeSource">-->
+<!--                        <ref bean="transactionAttributeSource" />-->
+<!--                    </property>-->
+<!--                </bean>-->
+<!--            </list>-->
+<!--        </property>-->
+<!--    </bean>-->
+
 </beans>

@@ -18,11 +18,10 @@ public class TeleconsultationController extends BaseRestController {
 	
 	@Autowired
 	private TeleconsultationService teleconsultationService;
-
-    @RequestMapping(value = "/generateLink", method = RequestMethod.GET)
+	
+	@RequestMapping(value = "/generateLink", method = RequestMethod.GET)
     @ResponseBody
     public ResponseEntity<String> generateTeleconsultationLink(@RequestParam(value = "uuid", required = true) String uuid) {
         return new ResponseEntity<>(teleconsultationService.generateTeleconsultationLink(uuid), HttpStatus.OK);
     }
-
 }

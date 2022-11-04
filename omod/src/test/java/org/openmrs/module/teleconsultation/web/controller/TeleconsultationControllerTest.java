@@ -13,23 +13,23 @@ import static org.mockito.Mockito.verify;
 import static org.mockito.MockitoAnnotations.initMocks;
 
 public class TeleconsultationControllerTest {
-
-    @Mock
-    private TeleconsultationService teleconsultationService;
-
-    @InjectMocks
-    private TeleconsultationController teleconsultationController;
-
-    @Before
-    public void setUp() throws Exception {
-        initMocks(this);
-    }
-
-    @Test
-    public void shouldGenerateTeleconsultationLink() throws Exception {
-        String patientUuid = "patientUuid";
-        ResponseEntity<String> adhocTeleconsultationResponse = teleconsultationController
-                .generateTeleconsultationLink(patientUuid);
-        verify(teleconsultationService, times(1)).generateTeleconsultationLink(eq(patientUuid));
-    }
+	
+	@Mock
+	private TeleconsultationService teleconsultationService;
+	
+	@InjectMocks
+	private TeleconsultationController teleconsultationController;
+	
+	@Before
+	public void setUp() throws Exception {
+		initMocks(this);
+	}
+	
+	@Test
+	public void shouldGenerateTeleconsultationLink() throws Exception {
+		String patientUuid = "patientUuid";
+		ResponseEntity<String> adhocTeleconsultationResponse = teleconsultationController
+		        .generateTeleconsultationLink(patientUuid);
+		verify(teleconsultationService, times(1)).generateTeleconsultationLink(eq(patientUuid));
+	}
 }

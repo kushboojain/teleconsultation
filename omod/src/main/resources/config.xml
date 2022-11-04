@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<module configVersion="1.2">
+<module configVersion="1.4">
 	
 	<!-- Base Module Properties -->
 	<id>${project.parent.artifactId}</id>
@@ -17,16 +17,11 @@
 	<!-- /Base Module Properties -->
 	
 	<require_version>1.11.6</require_version>
-	
-	<!-- Extensions -->
-	<extension>
-		<point>org.openmrs.admin.list</point>
-		<class>org.openmrs.module.teleconsultation.extension.html.AdminList</class>
-	</extension>
 
-	<aware_of_modules>
-		<aware_of_module>org.openmrs.module.legacyui</aware_of_module>
-	</aware_of_modules>
+	<require_modules>
+		<require_module>org.openmrs.module.webservices.rest</require_module>
+		<require_module>org.openmrs.module.teleconsultation</require_module>
+	</require_modules>
 
 	<globalProperty>
 		<property>bahmni.appointment.teleConsultation.serverUrlPattern</property>

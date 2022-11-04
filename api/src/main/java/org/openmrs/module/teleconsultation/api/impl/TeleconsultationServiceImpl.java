@@ -1,11 +1,14 @@
 package org.openmrs.module.teleconsultation.api.impl;
 
 import org.openmrs.api.context.Context;
+import org.openmrs.api.impl.BaseOpenmrsService;
 import org.openmrs.module.teleconsultation.api.TeleconsultationService;
+import org.springframework.stereotype.Component;
 
+import javax.transaction.Transactional;
 import java.text.MessageFormat;
 
-public class TeleconsultationServiceImpl implements TeleconsultationService {
+public class TeleconsultationServiceImpl extends BaseOpenmrsService implements TeleconsultationService {
 	
 	private final static String PROP_TC_SERVER = "bahmni.appointment.teleConsultation.serverUrlPattern";
 	

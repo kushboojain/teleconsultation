@@ -34,8 +34,8 @@ public class TeleconsultationServiceTest {
 	public void init() {
 		MockitoAnnotations.initMocks(this);
 		PowerMockito.mockStatic(Context.class);
-		when(administrationService.getGlobalProperty("bahmni.appointment.teleConsultation.serverUrlPattern"))
-				.thenReturn("https://test.server/{0}");
+		when(administrationService.getGlobalProperty("bahmni.appointment.teleConsultation.serverUrlPattern")).thenReturn(
+		    "https://test.server/{0}");
 		when(Context.getAdministrationService()).thenReturn(administrationService);
 	}
 	
