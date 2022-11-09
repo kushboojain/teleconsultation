@@ -1,11 +1,9 @@
-package org.openmrs.module.teleconsultation.api.impl;
+package org.bahmni.module.teleconsultation.api.impl;
 
+import org.bahmni.module.teleconsultation.api.TeleconsultationService;
 import org.openmrs.api.context.Context;
 import org.openmrs.api.impl.BaseOpenmrsService;
-import org.openmrs.module.teleconsultation.api.TeleconsultationService;
-import org.springframework.stereotype.Component;
 
-import javax.transaction.Transactional;
 import java.text.MessageFormat;
 
 public class TeleconsultationServiceImpl extends BaseOpenmrsService implements TeleconsultationService {

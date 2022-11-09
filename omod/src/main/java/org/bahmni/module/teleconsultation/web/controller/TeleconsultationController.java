@@ -1,6 +1,6 @@
-package org.openmrs.module.teleconsultation.web.controller;
+package org.bahmni.module.teleconsultation.web.controller;
 
-import org.openmrs.module.teleconsultation.api.TeleconsultationService;
+import org.bahmni.module.teleconsultation.api.TeleconsultationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

@@ -7,7 +7,7 @@
   		    http://www.springframework.org/schema/context
   		    http://www.springframework.org/schema/context/spring-context-3.0.xsd">
 
-    <context:component-scan base-package="org.openmrs.module.teleconsultation"/>
+    <context:component-scan base-package="org.bahmni.module.teleconsultation"/>
 
     <bean id="sessionFactory" class="org.openmrs.api.db.hibernate.HibernateSessionFactoryBean">
         <property name="packagesToScan">
@@ -23,7 +23,7 @@
 
     <bean id="teleconsultationService"
           name="teleconsultationService"
-          class="org.openmrs.module.teleconsultation.api.impl.TeleconsultationServiceImpl"/>
+          class="org.bahmni.module.teleconsultation.api.impl.TeleconsultationServiceImpl"/>
 
 
 </beans>

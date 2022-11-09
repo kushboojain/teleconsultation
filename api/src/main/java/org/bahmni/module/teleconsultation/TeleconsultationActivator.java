@@ -1,4 +1,4 @@
-package org.openmrs.module.teleconsultation;
+package org.bahmni.module.teleconsultation;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;

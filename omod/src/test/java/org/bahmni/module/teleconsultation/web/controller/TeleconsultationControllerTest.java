@@ -1,10 +1,10 @@
-package org.openmrs.module.teleconsultation.web.controller;
+package org.bahmni.module.teleconsultation.web.controller;
 
+import org.bahmni.module.teleconsultation.api.TeleconsultationService;
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
-import org.openmrs.module.teleconsultation.api.TeleconsultationService;
 import org.springframework.http.ResponseEntity;
 
 import static org.mockito.Matchers.eq;

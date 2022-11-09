@@ -27,7 +27,6 @@
 
     <!-- Wraps TeleconsultationService methods in DB transactions and OpenMRS interceptors,
     which set audit info like dateCreated, changedBy, etc.-->
-    <bean id="teleconsultationServiceImpl" class="org.openmrs.module.teleconsultation.api.impl.TeleconsultationServiceImpl"/>
     <bean id="teleconsultationService" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
         <property name="transactionManager">
             <ref bean="transactionManager" />
@@ -39,7 +38,7 @@
             <ref bean="transactionAttributeSource" />
         </property>
         <property name="target">
-            <ref bean="teleconsultationServiceImpl" />
+            <bean class="org.bahmni.module.teleconsultation.api.impl.TeleconsultationServiceImpl"/>
         </property>
     </bean>
 
@@ -48,7 +47,7 @@
     <bean parent="serviceContext">
         <property name="moduleService">
             <list>
-                <value>org.openmrs.module.teleconsultation.api.TeleconsultationService</value>
+                <value>org.bahmni.module.teleconsultation.api.TeleconsultationService</value>
                 <ref bean="teleconsultationService" />
             </list>
         </property>
